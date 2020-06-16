@@ -13,7 +13,7 @@ function App() {
   }, []);
   
   async function handleAddRepository() {
-    const response = await api.post('repositiries', {
+    const response = await api.post("repositories", {
       title: `Projeto ${new Date()}`,
       url: `https://github.com/tiagohcp/${new Date()}`,
       techs: ["Node.js", "ReactJS", "React Native"]
@@ -25,7 +25,7 @@ function App() {
   async function handleRemoveRepository(id) {
     await api.delete(`repositories/${id}`);
     
-    setRepositories(repositories.filter(repository => repository.id !== id));
+    setRepository(repositories.filter(repository => repository.id !== id));
   }
 
   return (
